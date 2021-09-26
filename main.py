@@ -25,17 +25,17 @@ def div(n1, n2):
 def calculator():
     """Allows to calculate two numbers"""  
     proceed = True    
-    num1 = float(input("What is your first number?\n> "))
+    num1 = float(input("Enter first number\n> "))
     for symbol in operations:
         print(symbol)
     function = input("Please select one operator: ")
-    num2 = float(input(function + " what number?\n> "))
+    num2 = float(input("Enter second number\n> "))
 
     memory = operations[function](num1,num2)
     while proceed:
         print (f"{num1} {function} {num2} = {memory}")
 
-        if input(f"Proceed with {memory} ?\n press 'n' to stop or any key to continue!\n> ").lower() == "n":
+        if input(f"Proceed with {memory} ? (y/n)\n> ").lower() == "n":
             proceed = False
             break
         else:
@@ -63,6 +63,6 @@ print("Welcome to the printing machine")
 while calculate_on:
     calculator()
 
-    if input("Start new Calculation?\nEnter 'n' to stop or hit any key to continue! "):
+    if input("Start new Calculation?\n(y/n) > "):
         calculate_on = False
 print("Good Bye :)")
